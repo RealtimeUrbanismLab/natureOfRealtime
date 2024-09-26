@@ -1,5 +1,3 @@
-Here’s a **README.md** tailored for your GitHub project, with details about the project, the RealTimeNature conference workshop, and instructions on how to view the hosted GH Pages site:
-
 # Nature of RealTime: Interactive Visualizations for DDes Conference 2024
 
 This project is an interactive realtime visualization created for the Harvard GSD DDes Conference 2024: *RealTimeNature*. The workshop *Scales of RealTime*, led by **Farzin Lotfi-Jam**, explores the aesthetics, histories, materiality, and spatial effects of realtime. 
@@ -63,7 +61,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Contact
 
 For any questions related to the project or the workshop, please contact **Farzin Lotfi-Jam**.
-
----
-
-By providing this README, you can now host the project using GitHub Pages, and the participants will have clear instructions on how to view and interact with the real-time visualizations. Let me know if you'd like to make any changes or additions!
