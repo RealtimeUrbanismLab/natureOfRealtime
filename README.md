@@ -9,7 +9,9 @@ This repository contains p5.js sketches and Leaflet-based visualizations develop
 ## Workshop Event Details
 
 **DDes Conference 2024: RealTimeNature**
+
 [RealTimeNature](https://www.gsd.harvard.edu/event/ddes-conference-2024-realtimenature/)
+
 - **Date:** September 27, 2024
 - **Time:** 9:30 AM – 5:30 PM
 - **Location:** GSD, Gund Hall Piper Auditorium
