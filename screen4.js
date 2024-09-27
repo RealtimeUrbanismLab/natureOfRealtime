@@ -66,7 +66,7 @@ class Screen4 {
     persistenceLabel.style('margin-right', '10px');
     uiContainer.child(persistenceLabel);
 
-    this.persistenceSlider = createSlider(1, 60, 10, 1); // Persistence from 1 to 60 frames
+    this.persistenceSlider = createSlider(1, 60, 60, 1); // Persistence from 1 to 60 frames
     this.persistenceSlider.style('width', '150px');
     uiContainer.child(this.persistenceSlider);  // Add to the UI container
 
@@ -74,9 +74,10 @@ class Screen4 {
     let resolutionLabel = createP('Resolution (pixels)');
     resolutionLabel.style('color', '#ffffff');
     resolutionLabel.style('margin-right', '10px');
+
     uiContainer.child(resolutionLabel);
 
-    this.resolutionSlider = createSlider(2, 1280, 100, 1); // Resolution from 2 to 1280 pixels across
+    this.resolutionSlider = createSlider(2, 1280, 20, 1); // Resolution from 2 to 1280 pixels across
     this.resolutionSlider.style('width', '150px');
     uiContainer.child(this.resolutionSlider);  // Add to the UI container
   }
@@ -195,7 +196,7 @@ class Screen4 {
       }`.toUpperCase();
       this.infoText = `Resolution: ${adjustedWidth} x ${adjustedHeight} pixels`.toUpperCase();
 
-      textSize(24);
+      textSize(32);
       fill(255);
       noStroke();
 

@@ -23,6 +23,8 @@ function preload() {
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  background(0);
+  
   colorMode(HSB, 360, 100, 100);
 
   // Create and style the screen title
@@ -39,8 +41,14 @@ function setup() {
 }
 
 function draw() {
-  // Draw the gradient background based on the selected options
-  drawBackgroundGradient();
+  // Only draw the gradient background if not on Screen0
+  
+  if (currentScreenIndex !== 0) {
+    drawBackgroundGradient();
+  } else {
+    // Optional: Clear the canvas if needed
+    clear();
+  }
 
   // Call the draw function of the active screen
   if (
@@ -50,6 +58,7 @@ function draw() {
     screens[currentScreenIndex].draw();
   }
 }
+
 
 // Gradient background functions
 function drawBackgroundGradient() {
@@ -139,24 +148,6 @@ function drawSpinningColorWheel() {
   pop();
 }
 
-// function drawSpinningColorWheel() {
-//   push();
-//   translate(width / 2, height / 2); // Move origin to the center of the canvas
-//   rotate(radians(h)); // Rotate the color wheel based on the hue value
-
-//   let numSegments = 48; // Number of segments in the color wheel
-//   let angleStep = TWO_PI / numSegments; // Each segment covers an equal portion of the wheel
-
-//   for (let i = 0; i < numSegments; i++) {
-//     let c = color((h + i * 30) % 360, 100, 100); // Adjust the hue for each segment
-//     fill(c);
-//     noStroke();
-//     arc(0, 0, width * 0.75, width * 0.75, i * angleStep, (i + 1) * angleStep); // Draw the segment in the shape of a ball
-//   }
-
-//   pop();
-// }
-
 function drawKaleidoscopeEffect() {
   push();
   translate(width / 2, height / 2);
@@ -224,11 +215,13 @@ function switchScreen(index) {
 
   // Update the screen title dynamically
   let screenTitles = [
+    "Realtime",
     "Loops",
     "Simultaneity",
     "Delay",
     "Delta",
-    "Media Display",
+    "Media",
+    "Route",
   ];
 
   // Ensure screenTitle exists before updating it
@@ -259,11 +252,12 @@ function windowResized() {
 }
 
 function initializeScreens() {
-  screens[0] = new Screen1();
-  screens[1] = new Screen2();
-  screens[2] = new Screen3();
-  screens[3] = new Screen4();
-  screens[4] = new Screen5();
+  screens[0] = new Screen0();
+  screens[1] = new Screen1();
+  screens[2] = new Screen2();
+  screens[3] = new Screen3();
+  screens[4] = new Screen4();
+  //screens[5] = new Screen5();
   screens[5] = new Screen6(); // New Map screen
   switchScreen(0);
 }
@@ -272,12 +266,13 @@ function initializeScreens() {
 // Navigation UI
  function createNavigationUI() {
    let buttonNames = [
-     "Screen 1",
-     "Screen 2",
-     "Screen 3",
-     "Screen 4",
-     "Screen 5",
-     "Screen 6",
+    "0 Realtime",
+    "1 Loops",
+    "2 Simultaneity",
+    "3 Delay",
+    "4 Delta",
+    //"5 Media",
+    "5 Route",
    ];
 
    let buttonContainer = createDiv(); // Create a div to center buttons
